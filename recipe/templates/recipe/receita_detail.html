@@ -1,0 +1,33 @@
+{% extends 'recipe/base.html' %}
+
+{% block content %}
+    <h3 class="sign">Receita: {{ receita.nome }}</h3>
+    <div class="receita-block">
+        <strong><p>{{ receita.nome }}</p></strong>
+
+        <div class="ingredients">
+            <hr>
+            <strong><p>Ingredientes:</p></strong>
+
+            {% for info in ingrediente %}
+                    <p>{{ info }}.</p>
+            {% endfor %}
+
+        </div>
+        <hr>
+
+        <div class="instructions">
+            <strong><p>Como fazer:</p></strong>
+            {% for info in instrução %}
+                    <p>{{ info }}.</p>
+            {% endfor %}
+        </div>
+        <div class="alterns">
+            <a href="{% url 'update-receita' receita.id %}">&#128393;</a>
+            <a href="{% url 'delete-receita' receita.id %}">&#128465;</a>
+        </div>
+    </div>
+
+    
+
+{% endblock %}

@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-bar {
+    margin-bottom: 3rem;
+    background-color: rgb(56, 56, 56);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+}
+
+body {
+    background-color: rgb(226, 226, 226);
+}
+
+.nav-link {
+    color: whitesmoke;
+    padding: 0 1rem;
+}
+
+.nav-link:hover {
+    color: rgb(172, 172, 172);
+}
+
+.nav-bar :nth-child(n + 1) {
+    margin: 0.3rem;
+}
+
+.form-search {
+    border: none;
+    border-radius: 8px;
+    width: 9rem;
+    max-width: 9rem;
+    height: 1.5rem;
+    outline: none;
+    padding: 5px 20px;
+}
+
+.form-search:hover {
+    outline: none;
+    box-shadow: 0 0 0.8em rgb(117, 116, 116);
+}
+
+
+.btn-search, .btn-save{
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.btn-search:hover, .btn-save:hover {
+    background-color: white;
+    color: black;
+}
+
+.btn-save {
+    display: flex;
+    margin: 1rem auto 0 auto;
+    padding: 5px 10px;
+}
+
+.btn-delete {
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.btn-delete:hover {
+    color: rgb(172, 172, 172)
+}
+
+.recipe-box, .about-box {
+    color: rgb(56, 56, 56);
+    max-width: 50%;
+    margin: 3rem auto 5rem auto;
+    padding: 2rem;
+    background-color: rgb(56, 56, 56);
+}
+
+.about-box {
+    color: white;
+    text-align: justify;
+}
+
+.little-box {
+    display: block;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 5px;
+    margin: 1rem;
+}
+
+.recipe-name {
+    color: rgb(56, 56, 56);
+    display: block;
+    margin: 0.5rem 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.recipe-name:hover {
+    color: rgb(172, 172, 172);
+}
+
+.sign {
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    padding: 0.5rem;
+    color: white;
+    background-color: rgb(56, 56, 56);
+}
+
+.upd-box {
+    margin: 1rem auto;
+    background-color: rgb(56, 56, 56);
+    width: fit-content;
+    color: white;
+    width: 50%;
+    padding: 1rem;
+}
+
+.upd-box label{
+    display: block;
+    padding: 0.2rem 0;
+}
+
+.upd-box input, textarea{
+    display: block;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+}
+
+.upd-box textarea {
+    resize: none;
+}
+
+.receita-block {
+    width: 50%;
+    margin: 3rem auto 5rem auto;
+    background-color: rgb(56, 56, 56);
+    padding: 1rem;
+    color: whitesmoke;
+}
+
+.ingredients {
+    margin: 0.5rem 0;
+}
+
+.ingredients p{
+    margin: 0.2rem 0;
+}
+
+.instructions {
+    margin: 0.5rem 0;
+}
+
+.instructions p{
+    margin: 0.2rem 0;
+}
+
+.alterns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.alterns a {
+    color: white;
+    padding: 0.5rem;
+    border-radius: 2px;
+}
+
+.alterns a:hover {
+    color: black;
+    background-color: white;
+}
+
+.alterns-2 {
+    margin: 0.6rem 0;
+}

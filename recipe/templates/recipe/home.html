@@ -1,0 +1,41 @@
+{% extends 'recipe/base.html' %}
+
+{% block content %}
+
+    {% if search %}
+        <h3 class="sign">Resultado da pesquisa</h3>
+
+    {% else %}
+        <h3 class="sign">Receitas</h3>
+    {% endif %}
+
+    
+        <div class="recipe-box">
+            {% for receita in receitas %}
+            <div class="little-box">
+                <small class="recipe-date">Criada em: {{ receita.postado|date:"F d, Y" }}</small>
+                <div class="strong">
+                    <strong><a class="recipe-name" href="{% url 'receita-detail' receita.id %}">{{ receita.nome }}</a></strong>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="alterns">
+                {% if receitas.has_previous %}
+                    <a href="{% url 'home' %}?page=1">Primeira</a>
+                    <a href="{% url 'home' %}?page={{ receitas.previous_page_number }}">Anterior</a>
+                {% endif %}
+
+                {% if receitas.has_next %}
+                    <a href="{% url 'home' %}?page={{ receitas.next_page_number }}">Próxima</a>
+                    <a href="{% url 'home' %}?page={{ last }}">Última</a>
+                {% endif %}
+            </div>
+   
+        </div>
+        
+    
+
+{% endblock %}
+
+

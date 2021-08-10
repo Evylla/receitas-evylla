@@ -1,0 +1,17 @@
+{% extends 'recipe/base.html' %}
+
+{% block content %}
+   
+    <div class="upd-box"">
+        <p>Você deseja mesmo deletar a receita <strong>"{{ item }}"</strong> ?</p>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="alterns-2">
+                <button class="btn-delete" type="submit">Sim</button>
+                    <a class="nav-link" href="{% url 'home' %}">Não, me leve de volta</a>
+            </div>
+        </form>
+        
+    </div>
+
+{% endblock %}

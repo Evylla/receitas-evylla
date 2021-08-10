@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{% static 'recipe/images/chicken.png' %}" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'recipe/main.css' %}">
+
+</head>
+<body>
+    
+        <nav class="nav-bar">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>  
+            <a class="nav-link" href="{% url 'about' %}">Sobre mim</a>
+
+
+            <a class="nav-link" href="{% url 'new-recipe' %}">+ Criar receita</a>
+            <a class="nav-link" href="{% url 'random-receita' %}">Receita aleatória</a>
+
+
+
+            <form id="pesquisa" style="display: inline-block;" action="{% url 'pesquisa' %}" method="GET">
+                {% csrf_token %}
+                <input class="form-search" type="text" name="receita" placeholder="Procure uma receita 	&#x1F50E;&#xFE0E;">
+                <button class="btn-search" type="submit">Pesquisar</button>
+            </form>
+
+            
+        </nav>
+
+    {% block content %}{% endblock %}
+
+</body>
+<footer class="footer-link">
+    <p class="footer-p">&copy; Desenvolvido por Evylla</p>
+</footer>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'recipe/base.html' %}
+
+{% block content %}
+  
+{% if messages %}
+{% for message in messages %}
+
+    <h3 class="sign">{{message}}</h3>
+
+{% endfor %}
+{% endif %}  
+
+<div class="upd-box">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="buttons">
+            <button class="btn-save" type="submit">Criar</button>
+        </div>
+
+    </form>
+    {{ form.errors }}
+</div>
+
+
+
+{% endblock %}

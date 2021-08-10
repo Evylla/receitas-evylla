@@ -1,0 +1,18 @@
+{% extends 'recipe/base.html' %}
+
+{% block content %}
+    <div class="upd-box">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="buttons">
+                <button class="btn-save type="submit">Editar</button>
+            </div>
+            
+        </form>
+    </div>
+    
+
+
+
+{% endblock %}
