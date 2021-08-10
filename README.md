@@ -1,5 +1,5 @@
 # receitas-evylla
-Olá, você!
+Olá, você! 👋
 
 Esse é o meu primeiro projeto em django. É um site de receitas, com funcionalidades C.R.U.D (create, read, update e delete) para as receitas.
 
