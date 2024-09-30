@@ -1,4 +1,4 @@
-{% extends 'recipe/base.html' %}
+{% extends 'receitas/base.html' %}
 
 {% block content %}
     <h3 class="sign">Receita: {{ receita.nome }}</h3>
@@ -10,7 +10,7 @@
             <strong><p>Ingredientes:</p></strong>
 
             {% for info in ingrediente %}
-                    <p>{{ info }}.</p>
+                    <p>{{ info }}</p>
             {% endfor %}
 
         </div>
@@ -19,7 +19,7 @@
         <div class="instructions">
             <strong><p>Como fazer:</p></strong>
             {% for info in instrução %}
-                    <p>{{ info }}.</p>
+                    <p>{{ info }}</p>
             {% endfor %}
         </div>
         <div class="alterns">

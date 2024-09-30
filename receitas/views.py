@@ -5,7 +5,6 @@ from .forms import RecipeForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.core.paginator import EmptyPage, Paginator
-from django.core.exceptions import MultipleObjectsReturned
 
 from random import randint
 
@@ -29,11 +28,11 @@ def home(request):
         'last' : lastpage
         }
 
-    return render(request, 'recipe/home.html', context)
+    return render(request, 'receitas/home.html', context)
 
 
 def about(request):
-    return render(request, 'recipe/about.html')
+    return render(request, 'receitas/about.html')
 
 
 def newRecipe(request):
@@ -49,7 +48,7 @@ def newRecipe(request):
         'form': form,
         'message': messages
     }
-    return render(request, 'recipe/receita_new.html', context)
+    return render(request, 'receitas/receita_new.html', context)
 
 
     
@@ -70,7 +69,7 @@ def receita(request, pk):
         'instrução': instrução,
     }
 
-    return render(request, "recipe/receita_detail.html", context)
+    return render(request, "receitas/receita_detail.html", context)
 
 
 def updateRecipe(request, pk):
@@ -87,7 +86,7 @@ def updateRecipe(request, pk):
     context = {
         'form': form,
     }
-    return render(request, 'recipe/receita_update.html', context)
+    return render(request, 'receitas/receita_update.html', context)
 
 
 def deleteRecipe(request, pk):
@@ -102,7 +101,7 @@ def deleteRecipe(request, pk):
         return redirect('home')
 
     
-    return render(request, 'recipe/receita_delete.html', context)
+    return render(request, 'receitas/receita_delete.html', context)
 
 
 def randomRecipe(request):
@@ -117,7 +116,7 @@ def pesquisa(request):
     if request.method == 'GET':
         receita = request.GET.get('receita')
         pesquisa = Receita.objects.filter(nome__contains=receita)
-        return render(request, "recipe/home.html", {
+        return render(request, "receitas/home.html", {
             "receitas": pesquisa,
             "search": True,
         })
